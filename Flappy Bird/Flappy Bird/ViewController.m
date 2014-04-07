@@ -112,8 +112,9 @@ static const float degreesToRadians = 0.0174532925f;
         _floor2.frame = CGRectMake(_floor2.frame.origin.x+deltaX, _floor1.frame.origin.y, 320, _floor1.frame.size.height);
         
         if(_floor1.frame.origin.x <= -320) {
-            _floor1.frame = CGRectMake(0, _floor1.frame.origin.y, 320, _floor1.frame.size.height);
-            _floor2.frame = CGRectMake(320, _floor1.frame.origin.y, 320, _floor1.frame.size.height);
+            float d = _floor1.frame.origin.x + _floor1.frame.size.width;
+            _floor1.frame = CGRectMake(d, _floor1.frame.origin.y, 320, _floor1.frame.size.height);
+            _floor2.frame = CGRectMake(320+d, _floor1.frame.origin.y, 320, _floor1.frame.size.height);
         }
     }
 }
